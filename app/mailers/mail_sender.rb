@@ -1,3 +1,4 @@
+# coding:utf-8
 class MailSender < ActionMailer::Base
   default from: "ticket@thanks-k.com"
 
