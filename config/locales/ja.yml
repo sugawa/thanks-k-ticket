@@ -107,6 +107,7 @@ ja:
       confirmation: と%{attribute}の入力が一致しません。
       empty: を入力してください。
       equal_to: は%{count}にしてください。
+      email_format: が一致しません。
       even: は偶数にしてください。
       exclusion: は予約されています。
       greater_than: は%{count}より大きい値にしてください。
