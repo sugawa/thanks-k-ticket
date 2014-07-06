@@ -11,6 +11,6 @@ class MailSender < ActionMailer::Base
 
     mail to: @reserve.email
     mail bcc: "spearmint.hs@gmail.com"
-    mail subject: '[Thanks!Kオーケストラ]ご予約ありがとうございました。'
+    mail subject: "[Thanks!Kオーケストラ]ご予約ありがとうございました。"
   end
 end
