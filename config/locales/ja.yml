@@ -145,7 +145,6 @@ ja:
         email: "メールアドレス"
         email_confirmation: "メールアドレス（確認用）"
         number: "予約枚数"
-  activerecord:
     errors:
       messages:
         invalid_email_address: "が一致しません。"
