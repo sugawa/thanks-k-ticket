@@ -107,7 +107,6 @@ ja:
       confirmation: と%{attribute}の入力が一致しません。
       empty: を入力してください。
       equal_to: は%{count}にしてください。
-      email_format: が一致しません。
       even: は偶数にしてください。
       exclusion: は予約されています。
       greater_than: は%{count}より大きい値にしてください。
@@ -146,6 +145,16 @@ ja:
         email: "メールアドレス"
         email_confirmation: "メールアドレス（確認用）"
         number: "予約枚数"
+  activerecord:
+    errors:
+      messages:
+        invalid_email_address: "が一致しません。"
+        email_address_not_routable: "が存在しません。"
+  activemodel:
+    errors:
+      messages:
+        invalid_email_address: "が一致しません。"
+        email_address_not_routable: "が存在しません。"
   number:
     currency:
       format:
