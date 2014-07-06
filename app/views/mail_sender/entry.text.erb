@@ -1,0 +1,21 @@
+【発券番号：（発券番号）】ご予約ありがとうございました。
+
+<%= @reserve.name %>様
+
+ご予約いただきありがとうございます。
+以下の内容で予約いたしました。
+
+発券番号　　　：（発券番号）
+お名前（漢字）： <%= @reserve.name %>
+お名前（かな）： <%= @reserve.kana %>
+メールアドレス： <%= @reserve.email %>
+予約枚数　　　： <%= @reserve.number %> 枚
+料金　　　　　： 500円 x <%= @reserve.number %> 枚 = <% price = @reserve.number * 500 %><%= price %> 円
+
+このメールは送信専用です。
+チケットのキャンセルなどお問い合わせは
+thanks.orch.ticket@gmail.com までお願いします。
+
+演奏会場でお待ちしています。
+Thanks!Kオーケストラ一同 
+

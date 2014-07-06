@@ -1,0 +1,51 @@
+<p>
+チケット：事前予約価格 1枚500円（予約なしの場合は1000円）
+</p>
+
+<div id="step-for-reserve" class="well">
+<h3>予約手順</h3>
+<ol>
+  <li>以下のフォームから必要事項を入力ください。</li>
+  <li>予約頂きますと発券番号が表示されますので保存ください（メールでも通知致します）。</li>
+  <li>演奏会当日、受付にて発券番号と一緒に料金をお支払ください。</li>
+  <li>予約枚数のチケットをお渡しいたします。</li>
+</ol>
+</div>
+
+<%= simple_form_for @reserve, :url => {:action => 'confirm'}, :html => {:class => 'form-horizontal'} do |f| %>
+
+<% if @reserve.errors.any? %>
+    <div id="error_explanation" class="alert alert-error">
+      <ul>
+      <% @reserve.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+  <div class="control-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>
+    <div class="control-group">
+    <%= f.label :kana %>
+    <%= f.text_field :kana, :class => "form-control" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "form-control" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :email_confirmation %>
+    <%= f.text_field :email_confirmation, :class => "form-control" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :number %>
+    <%= select :reserve, :number,[1,2,3,4,5,6,7,8,9,10] %>枚
+  </div>
+   <div class="form-actions">
+       <%= f.submit class: "btn form-control btn-primary", :value => '予約内容を確認する' %>
+  </div>
+<% end %>

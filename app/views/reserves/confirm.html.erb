@@ -1,0 +1,29 @@
+<h2>予約内容をご確認ください</h2>
+
+<p>以下の内容で予約します</p>
+
+
+
+<%= simple_form_for @reserve,:url => reserves_create_path, :html => {:class => 'form-horizontal'} do |f| %>
+
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :kana %>
+  <%= f.hidden_field :email %>
+  <%= f.hidden_field :email_confirmation %>
+  <%= f.hidden_field :number %>
+  <div class="control-group">
+    お名前（漢字）： <%= @reserve.name %><br>
+    お名前（かな）： <%= @reserve.kana %><br>
+    メールアドレス： <%= @reserve.email %><br>
+    予約枚数　　　： <%= @reserve.number %> 枚<br>
+  </div>
+
+<p class="well">
+入力頂いたアドレスに予約完了メールを送付いたしますので、受信拒否等の設定をされている場合は、 ticket@thanks-k.com からのメールを受信できるように設定してください。
+</p>
+
+   <div class="form-actions">
+       <input class="btn form-control" value="修正する" onclick="history.back()" type="button" />
+       <%= submit_tag('予約する', class: "btn form-control btn-primary", :disable_with => "送信中..." ) %>
+  </div>
+<% end %>
