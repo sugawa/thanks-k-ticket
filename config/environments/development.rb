@@ -1,6 +1,6 @@
 Rails.application.configure do
-  ENV["RAILS_RELATIVE_URL_ROOT"] = "/ticket"
-  Rails.application.config.relative_url_root = "/ticket"
+  #ENV["RAILS_RELATIVE_URL_ROOT"] = "/ticket"
+  #Rails.application.config.relative_url_root = "/ticket"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
