@@ -21,9 +21,6 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address => "localhost", # SMTPサーバのアドレス
     :port => 25, # SMTPサーバに接続するポート番号
-    #:user_name => "hoge", # SMTPサーバを使うためのユーザアカウント
-    #:password => "hoge", # ユーザアカウントのパスワード
-    :authentication => :plain # たいてい:plainでOK
   }
 
   # Print deprecation notices to the Rails logger.
