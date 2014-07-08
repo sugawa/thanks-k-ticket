@@ -43,3 +43,4 @@ gem 'simple_form'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+gem 'passenger', '~> 3.0.19'
