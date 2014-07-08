@@ -13,7 +13,7 @@
   <%= f.hidden_field :number %>
   <%= f.hidden_field :note %>
   <div class="control-group">
-    発券番号　　　： <%= Reserve.find(:last) %><br>
+    発券番号　　　： <%= Reserve.last.id + 1 %><br>
     お名前（漢字）： <%= @reserve.name %><br>
     お名前（かな）： <%= @reserve.kana %><br>
     メールアドレス： <%= @reserve.email %><br>
