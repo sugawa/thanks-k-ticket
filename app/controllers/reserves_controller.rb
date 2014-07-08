@@ -29,6 +29,6 @@ class ReservesController < ApplicationController
 
   private
     def reserve_params
-      params.require(:reserve).permit(:name, :kana, :email, :email_confirmation, :number)
+      params.require(:reserve).permit(:name, :kana, :email, :email_confirmation, :number, :note)
     end
 end

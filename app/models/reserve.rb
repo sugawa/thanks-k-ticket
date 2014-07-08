@@ -5,4 +5,5 @@ class Reserve < ActiveRecord::Base
 	validates :email, presence: true, confirmation: true, email_format: true
 	validates :email_confirmation, presence: true
 	validates :number, presence: true, numericality: true, inclusion: { in: 1..10 }
+	validates :note, length: { maximum: 1000 }
 end

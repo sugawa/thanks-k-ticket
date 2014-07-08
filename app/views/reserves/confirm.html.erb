@@ -11,11 +11,15 @@
   <%= f.hidden_field :email %>
   <%= f.hidden_field :email_confirmation %>
   <%= f.hidden_field :number %>
+  <%= f.hidden_field :note %>
   <div class="control-group">
+    発券番号　　　： <%= Reserve.find(:last) %><br>
     お名前（漢字）： <%= @reserve.name %><br>
     お名前（かな）： <%= @reserve.kana %><br>
     メールアドレス： <%= @reserve.email %><br>
     予約枚数　　　： <%= @reserve.number %> 枚<br>
+    備考　　　　　：<br>
+    <%= @reserve.note %>
   </div>
 
 <p class="well">
