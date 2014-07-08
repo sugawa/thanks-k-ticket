@@ -1,6 +1,6 @@
 # coding:utf-8
 class MailSender < ActionMailer::Base
-  default from: "Thanks!Kオーケストラ<ticket@thanks-k.com>"
+  default from: "ticket@thanks-k.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -12,6 +12,6 @@ class MailSender < ActionMailer::Base
 
     mail to: @reserve.email
     mail bcc: "spearmint.hs@gmail.com"
-    mail subject: "[発券番号：#{@reserve.id}]ご予約ありがとうございました。"
+    mail subject: "[Thanks!Kオーケストラ][発券番号：#{@reserve.id}]ご予約ありがとうございました。"
   end
 end
