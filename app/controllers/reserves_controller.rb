@@ -40,7 +40,7 @@ class ReservesController < ApplicationController
       # Settingsテーブルから事前予約可能チケットの残分を取得
       @settings = Setting.new
       @reserve = Reserve.new
-      stock = @settings.where("name = 'totals'").find(1).value - @settings.where("name = 'members'").find(1).value
+      stock = @settings.find_by(:name => 'totals').value - @settings.find_by(:name => 'members').value
       # 売れたチケットの枚数を取得
       sold = @reserve.sum(:number)
       if stock > sold
