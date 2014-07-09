@@ -42,7 +42,7 @@ class ReservesController < ApplicationController
       @reserve = Reserve.new
       stock = @settings.class.where("name = 'totals'").limit(1).pluck(:value) - @settings.class.where("name = 'members'").limit(1).pluck(:value)
       # 売れたチケットの枚数を取得
-      sold = @reserve.sum(:number)
+      sold = @reserve.class.sum(:number)
       if stock > sold
         return true
       else
