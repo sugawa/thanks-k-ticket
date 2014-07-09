@@ -3,7 +3,7 @@ class ReservesController < ApplicationController
     	if check_stock
           @reserve = Reserve.new
         else
-          render templete: 'reserves/soldout'
+          render :soldout
         end
     end
 
@@ -30,6 +30,9 @@ class ReservesController < ApplicationController
         end
        end
 	end
+
+  def soldout
+  end
 
   private
     def reserve_params
