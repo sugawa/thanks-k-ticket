@@ -3,7 +3,7 @@ class ReservesController < ApplicationController
     	if check_stock
           @reserve = Reserve.new
         else
-          format.html { render action: 'soldout' }
+          render templete: 'reserves/soldout'
         end
     end
 
