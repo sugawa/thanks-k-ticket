@@ -1,7 +1,4 @@
 ja:
-  mail_sender:
-    entry:
-      subject: '[Thanks!Kオーケストラ]ご予約ありがとうございました。'
   date:
     abbr_day_names:
     - 日
@@ -148,12 +145,12 @@ ja:
         note: "備考"
     errors:
       messages:
-        invalid_email_address: "が一致しません。"
+        invalid_email_address: "が不正です。"
         email_address_not_routable: "が存在しません。"
   activemodel:
     errors:
       messages:
-        invalid_email_address: "が一致しません。"
+        invalid_email_address: "が不正です。"
         email_address_not_routable: "が存在しません。"
   number:
     currency:
