@@ -1,6 +1,10 @@
 class ReservesController < ApplicationController
 	def new
-    	@reserve = Reserve.new
+    	if check_stock
+          @reserve = Reserve.new
+        else
+          format.html { render action: 'soldout' }
+        end
     end
 
     def create
@@ -30,5 +34,19 @@ class ReservesController < ApplicationController
   private
     def reserve_params
       params.require(:reserve).permit(:name, :kana, :email, :email_confirmation, :number, :note)
+    end
+
+    def check_stock
+      # Settingsテーブルから事前予約可能チケットの残分を取得
+      @settings = Setting.new
+      @reserve = Reserve.new
+      stock = @settings.where("name = 'totals'").find(1).value - @settings.where("name = 'members").find(1).value
+      # 売れたチケットの枚数を取得
+      sold = @reserve.sum(:number)
+      if stock > sold
+        return true
+      else
+        return false
+      end
     end
 end
