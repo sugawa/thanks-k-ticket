@@ -15,7 +15,7 @@ $ cd thanks-k-ticket
 $ bundle install
 $ cp config/database.sample.yml config/database.yml
 $ vim config/database.yml
-$ bin/rake db:create db:migrate
+$ bin/rake db:create db:migrate db:seed
 $ bin/rails s
 $ open http://0.0.0.0:3000/
 ```
