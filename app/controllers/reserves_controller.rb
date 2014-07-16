@@ -1,6 +1,6 @@
 class ReservesController < ApplicationController
-	def new
-    	if check_stock
+  def new
+      if check_stock
           @reserve = Reserve.new
         else
           render :soldout
@@ -8,9 +8,9 @@ class ReservesController < ApplicationController
     end
 
     def create
-	    @reserve = Reserve.new(reserve_params)
-	    
-	    respond_to do |format|
+      @reserve = Reserve.new(reserve_params)
+
+      respond_to do |format|
         if @reserve.save
            MailSender.entry(@reserve).deliver #MailSender.entryに@reserveを渡す
            format.html { render action: 'complete' }
@@ -20,16 +20,16 @@ class ReservesController < ApplicationController
        end
     end
 
-	def confirm
-		@reserve = Reserve.new(reserve_params)
-	    respond_to do |format|
+  def confirm
+    @reserve = Reserve.new(reserve_params)
+      respond_to do |format|
         if @reserve.valid?
            format.html
         else
            format.html { render action: 'new', notice: 'error'  }
         end
        end
-	end
+  end
 
   def soldout
   end
